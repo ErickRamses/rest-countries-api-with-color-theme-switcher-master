@@ -5,28 +5,33 @@ export const Carta = ({name,imagen,pop,reg,cap}) => {
   const stilo={
     background:"hsl(209, 23%, 22%)",
     boxShadow:"20px,20px",
-    marginBottom:"35px"
+    marginBottom:"10px"
 
   }
+  
   return (
     //population region capital
     //if nepal make height
+    
+    //make an unsterched version maybe in the furtuer
     <div style={stilo}>
       
       <b>{name}</b>
        
+        
+        <div style={{paddingBottom:"10px"}}>
+          <img src={imagen} loading={"lazy"} style={{width:"320px",height:"213px"}}/>
+        </div>
       
-
-        <img src={imagen} loading={"lazy"} style={{width:"320px"}}/>
-      
-      <div style={{textAlign:"left",paddingLeft:"5px"}}>
-        Population: {pop}
+      <div style={{textAlign:"left",paddingLeft:"10px",paddingBottom:"10px"}}>
+        Population: <span style={{color:"rgb(194, 194, 194)"}}>{pop.toLocaleString('en-US')}</span>
         <br/>
-        Region: {reg}
+        Region: <span style={{color:"rgb(194, 194, 194)"}}>{reg}</span>
         <br/>
-        Capital: {cap}
+        Capital: <span style={{color:"rgb(194, 194, 194)"}}>{cap}</span>
 
-
+        
+        
       </div>
     </div>
   )

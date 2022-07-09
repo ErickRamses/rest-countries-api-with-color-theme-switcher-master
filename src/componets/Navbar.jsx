@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { useEffect } from 'react'
 
 
-export const Navbar = () => {
+export const Navbar = ({searh}) => {
   
   const input =useRef()
 
@@ -13,7 +13,7 @@ export const Navbar = () => {
   //make it in app
   return (
     <div>
-      <input ref={input} onChange={()=>{console.log(input.current.value)}} type="text"/>
+      <input ref={input} onChange={()=>{searh(input)}} type="text"/>
     </div>
   )
 }
