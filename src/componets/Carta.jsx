@@ -20,10 +20,11 @@ export const Carta = ({name,imagen,pop,reg,cap}) => {
        
         
         <div style={{paddingBottom:"10px"}}>
+          
           <img src={imagen} loading={"lazy"} style={{width:"320px",height:"213px"}}/>
         </div>
       
-      <div style={{textAlign:"left",paddingLeft:"10px",paddingBottom:"10px"}}>
+      <div style={{textAlign:"left",paddingLeft:"10px",paddingBottom:"20px"}}>
         Population: <span style={{color:"rgb(194, 194, 194)"}}>{pop.toLocaleString('en-US')}</span>
         <br/>
         Region: <span style={{color:"rgb(194, 194, 194)"}}>{reg}</span>

@@ -12,8 +12,10 @@ export const Navbar = ({searh}) => {
 
   //make it in app
   return (
-    <div>
-      <input ref={input} onChange={()=>{searh(input)}} type="text"/>
+  
+  <div style={{padding:"10px",position:"sticky",top:"0px",background:"red",display:"flex",}}>
+      <input style={{}} ref={input} onChange={()=>{searh(input)}} type="text"/>
+      <input />
     </div>
   )
 }

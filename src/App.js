@@ -17,6 +17,13 @@ function App() {
           //console.log(data)
           //console.log(data[0])
           //console.log(data[0].name.common)
+          data.sort(function(a, b){
+            if(a.name.common.toLowerCase() < b.name.common.toLowerCase()) { return -1; }
+            if(a.name.common.toLowerCase() > b.name.common.toLowerCase()) { return 1; }
+            return 0;
+        })
+        
+
           setdata([...data])
           setdata0([...data])
         })
@@ -44,7 +51,7 @@ function App() {
   return (
     //2 set datas??
 
-    // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt
+    // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav filtrador
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
       
         <Navbar searh={searh}/>
