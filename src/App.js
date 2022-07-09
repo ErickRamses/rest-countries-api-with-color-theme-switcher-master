@@ -20,11 +20,11 @@ function App() {
       },[])
 
   return (
-    //map every name
-    <div className="App">
+    // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange flitrar
+    <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
       
         <Navbar/>
-        <Body/>
+        <Body data={data}/>
           
           {
           // data && data.map((value)=>{
