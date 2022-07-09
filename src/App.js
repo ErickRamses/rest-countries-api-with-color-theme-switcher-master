@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [data,setdata] =useState(null);
+  const [data0,setdata0] =useState(null);
+  let pusher=[]
       useEffect(()=>{
        //  https://api.nationalize.io/?name=
         // https://restcountries.com/v3.1/all
@@ -16,14 +18,36 @@ function App() {
           //console.log(data[0])
           //console.log(data[0].name.common)
           setdata([...data])
+          setdata0([...data])
         })
       },[])
 
+  function searh(input){
+    pusher=[]
+    for(let x of data0){
+      
+
+    //   carray.forEach(element => {
+    //     if(element.indexOf(name)==0){
+    //         result = element.substring(name.length+1);
+    //     }
+    // } )
+     
+      if(x.name.common.toLowerCase().indexOf(input.current.value.toLowerCase())==0){
+       
+        pusher.push(x)
+      }
+    }
+    setdata(pusher)
+    //setdata()
+  }    
   return (
-    // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange flitrar
+    //2 set datas??
+
+    // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
       
-        <Navbar/>
+        <Navbar searh={searh}/>
         <Body data={data}/>
           
           {
