@@ -1,6 +1,24 @@
 .App {
   text-align: center;
 }
+.animation{
+  
+  
+  background-color: hsl(209, 23%, 22%);
+}
+
+.animation:hover{
+   position: relative;
+  left: 2px;
+  top: 2px; 
+  background-color: hsl(206, 11%, 28%);
+
+}
+body{
+  background-color: hsl(207, 26%, 17%);
+}
+
+
 
 .App-logo {
   height: 40vmin;

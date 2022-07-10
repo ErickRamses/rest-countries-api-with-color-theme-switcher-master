@@ -76,6 +76,9 @@ function App() {
    console.log(regio)
     searh(prev)
   }
+  function cliked(data){
+    console.log(data)
+  }
   
   return (
     //2 set datas??
@@ -87,7 +90,7 @@ function App() {
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
       
         <Navbar searh={searh} filtrareg={filtrareg}/>
-        <Body data={data}/>
+        <Body data={data} cliked={cliked}/>
           
           {
           // data && data.map((value)=>{

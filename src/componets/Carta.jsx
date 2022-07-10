@@ -1,13 +1,16 @@
 import React from 'react'
 
-export const Carta = ({name,imagen,pop,reg,cap}) => {
+export const Carta = ({cliked,name,imagen,pop,reg,cap}) => {
+ 
 
   const stilo={
-    background:"hsl(209, 23%, 22%)",
-    boxShadow:"20px,20px",
+    
+   
     marginBottom:"0px",
     borderRadius: "30px",
-    overflow: "hidden"
+    overflow: "hidden",
+    boxShadow:"4px 4px 4px 3px rgba(0,0,0,0.19)",
+    
   }
   
   //border: 5px solid #1C6EA4,
@@ -16,7 +19,7 @@ export const Carta = ({name,imagen,pop,reg,cap}) => {
     //if nepal make height
     
     //make an unsterched version maybe in the furtuer
-    <div style={stilo}>
+    <div style={stilo} className="animation" onClick={()=>{cliked(name)}}>
       
       <b>{name}</b>
        
