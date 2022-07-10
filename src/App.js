@@ -4,11 +4,17 @@ import { Navbar } from './componets/Navbar';
 import { Body } from './componets/Body';
 import { useEffect, useState } from 'react';
 
+let pusher=[]
+let regio="";
+let prev={"current":{"value":""}};
 function App() {
   const [data,setdata] =useState(null);
   const [data0,setdata0] =useState(null);
-  let pusher=[]
-      useEffect(()=>{
+  
+  
+  useEffect(()=>{
+
+
        //  https://api.nationalize.io/?name=
         // https://restcountries.com/v3.1/all
         fetch("https://restcountries.com/v3.1/all")
@@ -30,6 +36,8 @@ function App() {
       },[])
 
   function searh(input){
+    prev=input
+    console.log(input.current.value)
     pusher=[]
     for(let x of data0){
       
@@ -41,20 +49,44 @@ function App() {
     // } )
      
       if(x.name.common.toLowerCase().indexOf(input.current.value.toLowerCase())==0){
-       
-        pusher.push(x)
+        //console.log(x.name.common)
+
+        //then other if depending of  comto
+        //wtf
+              console.log(regio)
+              if(regio==""){
+                pusher.push(x)
+                
+              }else{
+                if(x.region.indexOf(regio)==0){
+                  pusher.push(x)
+                }
+                
+              }
+
       }
     }
     setdata(pusher)
+    console.log(regio)
     //setdata()
-  }    
+  }
+
+  function filtrareg(filtr){
+    regio=filtr.current.value
+   console.log(regio)
+    searh(prev)
+  }
+  
   return (
     //2 set datas??
 
-    // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav filtrador
+    //stop at 1440px
+
+    // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav icons filtrador
+    //filtrador bro  makeimg smalaer to fit x2 fixnavar addicons?? popdiv new
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
       
-        <Navbar searh={searh}/>
+        <Navbar searh={searh} filtrareg={filtrareg}/>
         <Body data={data}/>
           
           {

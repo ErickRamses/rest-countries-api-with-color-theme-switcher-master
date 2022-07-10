@@ -3,7 +3,7 @@ import { Carta } from './Carta'
 
 export const Body = ({data}) => {
   return (
-    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,320px)",gap:"2rem",justifyContent:"center"}}>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,288px)",gap:"2rem",justifyContent:"center",maxWidth:"1440px",marginLeft:"auto",marginRight:"auto"}}>
         
         {data && data.map((value)=>{
           if(value.name.common=="Nepal"){
