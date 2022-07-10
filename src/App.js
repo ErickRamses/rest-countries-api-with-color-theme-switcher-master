@@ -83,7 +83,7 @@ function App() {
     //stop at 1440px
 
     // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav icons filtrador
-    //filtrador bro  makeimg smalaer to fit x2 fixnavar addicons?? popdiv new
+    //filtrador bro  makeimg smalaer to fit x2 fixnavar addicons?? animation new
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
       
         <Navbar searh={searh} filtrareg={filtrareg}/>

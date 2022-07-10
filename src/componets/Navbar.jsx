@@ -17,13 +17,13 @@ export const Navbar = ({searh,filtrareg}) => {
       
       <div style={{padding:"10px",position:"sticky",top:"0px",background:"hsl(209, 23%, 22%)",display:"flex",alignItems:"baseline",maxWidth:"1245px",textAlign:"center",marginLeft:"auto",marginRight:"auto"}}>
 
-        <div>
+        <div >
             <input style={{width:"100%"}} ref={input} onChange={()=>{searh(input)}} type="text"/>
 
         </div>
             
         <div style={{marginLeft:"auto"}}>
-            <label >Filtered by region: 
+            <label>Filtered by region: 
 
 
               <select name="region" ref={filtr} onChange={()=>{filtrareg(filtr)}}>
@@ -33,7 +33,7 @@ export const Navbar = ({searh,filtrareg}) => {
               <option value="Asia">Asia</option>
               <option value="Europe">Europe</option>
               <option value="Oceania">Oceania</option>
-              <option value="Antatida">Antatida</option>
+              <option value="Antarctic">Antarctic</option>
             </select>
             </label>
           
