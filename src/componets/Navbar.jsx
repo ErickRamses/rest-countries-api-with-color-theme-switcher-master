@@ -18,7 +18,7 @@ export const Navbar = ({searh,filtrareg}) => {
       <div style={{padding:"10px",position:"sticky",top:"0px",background:"hsl(209, 23%, 22%)",display:"flex",alignItems:"baseline",maxWidth:"1248px",textAlign:"center",marginLeft:"auto",marginRight:"auto"}}>
 
         
-            <input placeholder='🔎' style={{width:"100%",maxWidth:"500px",borderRadius: "8px",boxShadow:"7px 3px 4px 3px rgba(0,0,0,0.19)"}} ref={input} onChange={()=>{searh(input)}} type="text"/>
+            <input placeholder='🔎' style={{width:"100%",maxWidth:"400px",borderRadius: "8px",boxShadow:"7px 3px 4px 3px rgba(0,0,0,0.19)"}} ref={input} onChange={()=>{searh(input)}} type="text"/>
 
        
             

@@ -9,7 +9,7 @@ export const Carta = ({cliked,name,imagen,pop,reg,cap}) => {
     marginBottom:"0px",
     borderRadius: "30px",
     overflow: "hidden",
-    boxShadow:"4px 4px 4px 3px rgba(0,0,0,0.19)",
+    
     
   }
   
