@@ -3,7 +3,7 @@ import './App.css';
 import { Navbar } from './componets/Navbar';
 import { Body } from './componets/Body';
 import { useEffect, useState } from 'react';
-
+import { Link } from "react-router-dom";
 let pusher=[]
 let regio="";
 let prev={"current":{"value":""}};
@@ -81,6 +81,8 @@ function App() {
   }
   
   return (
+
+
     //2 set datas??
 
     //stop at 1440px
@@ -88,7 +90,8 @@ function App() {
     // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav icons filtrador
     //filtrador bro  makeimg smalaer to fit x2 fixnavar addicons?? animation new
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
-      
+        <Link to="/expenses">Expenses</Link>
+          
         <Navbar searh={searh} filtrareg={filtrareg}/>
         <Body data={data} cliked={cliked}/>
           
