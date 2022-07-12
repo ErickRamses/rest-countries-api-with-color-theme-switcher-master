@@ -3,14 +3,14 @@ import './App.css';
 import { Navbar } from './componets/Navbar';
 import { Body } from './componets/Body';
 import { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 let pusher=[]
 let regio="";
 let prev={"current":{"value":""}};
 function App() {
   const [data,setdata] =useState(null);
   const [data0,setdata0] =useState(null);
-  
+  let navigate =useNavigate();
   
   useEffect(()=>{
 
@@ -78,6 +78,9 @@ function App() {
   }
   function cliked(data){
     console.log(data)
+    navigate(`/country/${data}`)
+    //<Link to="/expenses">Expenses</Link>
+
   }
   
   return (
@@ -89,8 +92,8 @@ function App() {
 
     // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav icons filtrador
     //filtrador bro  makeimg smalaer to fit x2 fixnavar addicons?? animation new
+    //make flag to go to linl
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
-        <Link to="/expenses">Expenses</Link>
           
         <Navbar searh={searh} filtrareg={filtrareg}/>
         <Body data={data} cliked={cliked}/>

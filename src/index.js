@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Country from './componets/Country';
 import {
     BrowserRouter,
     Routes,
@@ -16,7 +17,7 @@ root.render(
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="expenses" element={<>bmnmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</>} />
+      <Route path="/country/:name" element={<Country/>} />
       
     </Routes>
   </BrowserRouter>
