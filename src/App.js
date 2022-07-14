@@ -14,7 +14,7 @@ function App() {
   
   useEffect(()=>{
 
-
+        
        //  https://api.nationalize.io/?name=
         // https://restcountries.com/v3.1/all
         fetch("https://restcountries.com/v3.1/all")
@@ -37,7 +37,7 @@ function App() {
 
   function searh(input){
     prev=input
-    console.log(input.current.value)
+    
     pusher=[]
     for(let x of data0){
       
@@ -53,7 +53,7 @@ function App() {
 
         //then other if depending of  comto
         //wtf
-              console.log(regio)
+             
               if(regio==""){
                 pusher.push(x)
                 
@@ -67,7 +67,7 @@ function App() {
       }
     }
     setdata(pusher)
-    console.log(regio)
+    
     //setdata()
   }
 
@@ -77,7 +77,7 @@ function App() {
     searh(prev)
   }
   function cliked(data){
-    console.log(data)
+    
     navigate(`/country/${data}`)
     //<Link to="/expenses">Expenses</Link>
 
@@ -93,6 +93,7 @@ function App() {
     // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav icons filtrador
     //filtrador bro  makeimg smalaer to fit x2 fixnavar addicons?? animation new
     //make flag to go to linl
+    //stile and done ? i hope jsjajdajdsajsdjsajw
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
           
         <Navbar searh={searh} filtrareg={filtrareg}/>
