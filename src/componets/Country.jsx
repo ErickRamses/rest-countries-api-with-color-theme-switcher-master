@@ -9,10 +9,10 @@ const Country = () => {
     const [aray,setaray] =useState(null);
     let navigate = useNavigate();
 
-    let xd= 'cha'
+    // i could use the local storage instead but... nah
 
     useEffect(()=>{
-        //if name is 3 long fet from https://restcountries.com/v3.1/alpha/GRC
+        //if name is 3 long fect from https://restcountries.com/v3.1/alpha/GRC
      if(name.length==3){
         fetch(`https://restcountries.com/v3.1/alpha/${name}`)
      .then(res=>res.json())
