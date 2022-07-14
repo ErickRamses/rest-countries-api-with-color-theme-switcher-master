@@ -92,7 +92,9 @@ function App() {
 
     // pass data them map every name yhen sise imagenlazy cartinfo? shadow formater navbar searcherdetectachange 2datas flitrar improveflags alfabrt fix and improve nav icons filtrador
     //filtrador bro  makeimg smalaer to fit x2 fixnavar addicons?? animation new
-    //make flag to go to linl
+
+    //do a button style 
+    //make flag to go to linl 
     //stile and done ? i hope jsjajdajdsajsdjsajw
     <div className="App" style={{background:"hsl(207, 26%, 17%)",color:"white"}}>
           

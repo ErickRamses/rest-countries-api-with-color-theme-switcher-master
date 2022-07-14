@@ -12,16 +12,27 @@ const Country = () => {
     let xd= 'cha'
 
     useEffect(()=>{
-
-
-    
-     fetch(`https://restcountries.com/v3.1/name/${name}`)
+        //if name is 3 long fet from https://restcountries.com/v3.1/alpha/GRC
+     if(name.length==3){
+        fetch(`https://restcountries.com/v3.1/alpha/${name}`)
      .then(res=>res.json())
      .then(data =>{   
         setaray(data)
               
         
     })
+     }else{
+        fetch(`https://restcountries.com/v3.1/name/${name}`)
+     .then(res=>res.json())
+     .then(data =>{   
+        setaray(data)
+              
+        
+    })
+
+     }   
+    
+     
    },[])
 
 
@@ -31,13 +42,12 @@ const Country = () => {
 
        
        
-            <div style={{paddingRight:"auto",paddingLeft:"10px"}}>
-                <button onClick={()=>{navigate(`/`);}}>back</button>
-               
+            <div style={{paddingRight:"auto",paddingLeft:"10px",paddingTop:"10px"}}>
+                <button className='button' onClick={()=>{navigate(`/`);}}>back</button>
             </div>
             <br></br>
        {aray  &&   
-       <div style={{maxWidth:"1440px",display:"flex",flexWrap:"wrap",alignItems:"center",textAlign:"left",marginLeft:"auto",marginRight:"auto",marginTop:"5%"}}>
+       <div style={{maxWidth:"1440px",display:"flex",flexWrap:"wrap",alignItems:"center",textAlign:"left",marginLeft:"auto",marginRight:"auto",marginTop:"1%"}}>
             
            
             
@@ -82,15 +92,21 @@ const Country = () => {
         <br/>
         Capital: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].capital}</span>
         <br></br>
-        Bordering Countries: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].borders.toString()}</span>
-        <br></br>
         Currency: <span style={{color:"rgb(194, 194, 194)"}}>{eval(`aray[0].currencies.${Object.keys(aray[0].currencies)[0]}.symbol`) } {eval(`aray[0].currencies.${Object.keys(aray[0].currencies)[0]}.name`) }</span>
         <br></br>
         Languajes: <span style={{color:"rgb(194, 194, 194)"}}>{eval(`aray[0].languages.${Object.keys(aray[0].languages)[0]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[1]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[2]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[3]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[4]}`)}</span>
         <br></br>
         Coat of arms: <div>
-        <img src= {aray[0].coatOfArms.svg} alt="" width="100px" />
+        <img src= {aray[0].coatOfArms?.svg} alt="" width="120px" />
             </div>
+                
+        Bordering Countries: {aray[0].borders?.map((value)=>{
+            return <button key={value} className='button' style={{marginLeft:"3px",marginTop:"3px"}} onClick={()=>{navigate(`/country/${value}`) 
+            window.location.reload();
+        }}>{value}</button>
+
+        })} 
+        <br></br>
             
             </div>
             
