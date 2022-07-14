@@ -9,6 +9,8 @@ const Country = () => {
     const [aray,setaray] =useState(null);
     let navigate = useNavigate();
 
+    let xd= 'cha'
+
     useEffect(()=>{
 
 
@@ -17,33 +19,94 @@ const Country = () => {
      .then(res=>res.json())
      .then(data =>{   
         setaray(data)
-        console.log(aray)        
+              
         
     })
    },[])
 
 
   return (
-    <div style={{color:"white",display:"flex",justifyContent:"center"}}>
-       {aray  &&   
-       <div style={{maxWidth:"1440px"}}>
-            <button onClick={()=>{navigate(`/`);}}>back</button>
-            
-            {aray[0].name.common}
+    <div style={{color:"white"}}>
+       <div style={{maxWidth:"1440px",marginLeft:"auto",marginRight:"auto"}}>
+
+       
+       
+            <div style={{paddingRight:"auto",paddingLeft:"10px"}}>
+                <button onClick={()=>{navigate(`/`);}}>back</button>
+               
+            </div>
             <br></br>
-            //make ir a background imafen lol zzz que pro xd god
-            <div>
+       {aray  &&   
+       <div style={{maxWidth:"1440px",display:"flex",flexWrap:"wrap",alignItems:"center",textAlign:"left",marginLeft:"auto",marginRight:"auto",marginTop:"5%"}}>
+            
+           
+            
+            <div style={{width:"100px",minWidth:"320px",flexGrow:"1",paddingLeft:"10px",paddingRight:"10px"}}>
                 <img src={aray[0].flags.svg} style={{width:"100%"}}></img>
 
             </div>
+        {aray[0].languages ==undefined ||aray[0].currencies ==undefined   ? 
+        
+        <div style={{width:"50%",minWidth:"350px",fontSize:"1.2em",marginLeft:"10px"}}>
+            Common name: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].name.common}</span>
+        <br/>
+        Population: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].population.toLocaleString('en-US')}</span>
+        <br/>
+        Region: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].region}</span>
+        <br/>    
+
+        </div>
+        
+        
+        :
+        
+            
+            <div style={{width:"50%",minWidth:"350px",fontSize:"1.2em",marginLeft:"10px"}}>
+
        
-       
+
+          
+        
+        Native name: <span style={{color:"rgb(194, 194, 194)"}}>{eval(`aray[0].name.nativeName.${Object.keys(aray[0].languages)[0]}.official`) }</span>    
+        <br/>     
+           
+        Official name: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].name.official}</span>    
+        <br/>
+        Common name: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].name.common}</span>
+        <br/>
+        Population: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].population.toLocaleString('en-US')}</span>
+        <br/>
+        Region: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].region}</span>
+        <br/>
+        Sub region: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].subregion}</span>    
+        <br/>
+        Capital: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].capital}</span>
+        <br></br>
+        Bordering Countries: <span style={{color:"rgb(194, 194, 194)"}}>{aray[0].borders.toString()}</span>
+        <br></br>
+        Currency: <span style={{color:"rgb(194, 194, 194)"}}>{eval(`aray[0].currencies.${Object.keys(aray[0].currencies)[0]}.symbol`) } {eval(`aray[0].currencies.${Object.keys(aray[0].currencies)[0]}.name`) }</span>
+        <br></br>
+        Languajes: <span style={{color:"rgb(194, 194, 194)"}}>{eval(`aray[0].languages.${Object.keys(aray[0].languages)[0]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[1]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[2]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[3]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[4]}`)}</span>
+        <br></br>
+        Coat of arms: <div>
+        <img src= {aray[0].coatOfArms.svg} alt="" width="100px" />
+            </div>
+            
+            </div>
+            
+            
+            
+            
+            
+            
+            }
+            
        
        
       
        
        </div>}
-        
+        </div>
     </div>
   )
 }
