@@ -1,3 +1,4 @@
+import { tab } from '@testing-library/user-event/dist/tab'
 import React from 'react'
 
 export const Carta = ({cliked,name,imagen,pop,reg,cap}) => {
@@ -19,7 +20,9 @@ export const Carta = ({cliked,name,imagen,pop,reg,cap}) => {
     //if nepal make height
     
     //make an unsterched version maybe in the furtuer
-    <div style={stilo} className="animation" onClick={()=>{cliked(name)}}>
+    <div tabIndex="0" style={stilo} className="animation" onClick={()=>{cliked(name)}} onKeyUp={(nosw)=>{  
+      if(nosw.code=="Tab")return
+      cliked(name)}}>
       
       <b>{name}</b>
        
