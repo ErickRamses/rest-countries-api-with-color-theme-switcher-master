@@ -21,7 +21,8 @@ export const Carta = ({cliked,name,imagen,pop,reg,cap}) => {
     
     //make an unsterched version maybe in the furtuer
     <div tabIndex="0" style={stilo} className="animation" onClick={()=>{cliked(name)}} onKeyUp={(nosw)=>{  
-      if(nosw.code=="Tab")return
+      
+      if(nosw.code!=="Enter")return
       cliked(name)}}>
       
       <b>{name}</b>

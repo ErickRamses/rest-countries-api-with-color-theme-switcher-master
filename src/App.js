@@ -20,7 +20,7 @@ function App() {
     setdata0(get) 
     setdata(get) 
     
-    console.log(data0)    
+       
         // https://api.nationalize.io/?name=
         // https://restcountries.com/v3.1/all
         fetch("https://restcountries.com/v3.1/all")
