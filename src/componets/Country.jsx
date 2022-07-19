@@ -13,6 +13,8 @@ const Country = () => {
 
     useEffect(()=>{
         //if name is 3 long fect from https://restcountries.com/v3.1/alpha/GRC
+
+        //setaray(JSON.parse(localStorage.getItem("datos")))         
      if(name.length==3){
         fetch(`https://restcountries.com/v3.1/alpha/${name}`)
      .then(res=>res.json())
@@ -96,7 +98,7 @@ const Country = () => {
         <br></br>
         Languajes: <span style={{color:"rgb(194, 194, 194)"}}>{eval(`aray[0].languages.${Object.keys(aray[0].languages)[0]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[1]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[2]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[3]}`)} {eval(`aray[0].languages.${Object.keys(aray[0].languages)[4]}`)}</span>
         <br></br>
-        Coat of arms: <div>
+        Coat of arms: <div style={{}}>
         <img src= {aray[0].coatOfArms?.svg} alt="" width="120px" />
             </div>
                 

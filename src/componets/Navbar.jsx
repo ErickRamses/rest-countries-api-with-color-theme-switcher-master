@@ -18,15 +18,15 @@ export const Navbar = ({searh,filtrareg}) => {
       <div style={{padding:"10px",position:"sticky",top:"0px",background:"hsl(209, 23%, 22%)",display:"flex",alignItems:"baseline",maxWidth:"1248px",textAlign:"center",marginLeft:"auto",marginRight:"auto"}}>
 
         
-            <input placeholder='🔎' style={{width:"100%",maxWidth:"400px",borderRadius: "8px",boxShadow:"7px 3px 4px 3px rgba(0,0,0,0.19)"}} ref={input} onChange={()=>{searh(input)}} type="text"/>
+            <input placeholder='🔎' style={{width:"100%",maxWidth:"400px",borderRadius: "8px",boxShadow:"6px 2px 4px .1px rgba(0,0,0,0.19)",backgroundColor:"hsl(209, 33%, 22%)",color:"white",fontSize:"17px"}} ref={input} onChange={()=>{searh(input)}} type="text"/>
 
        
             
         <div style={{marginLeft:"auto"}}>
-            <label style={{}}>Filter by region:   
+            <label style={{fontSize:"17px"}}>Filter by region:   
 
 
-              <select name="region" ref={filtr} style={{borderRadius: "8px",marginLeft:"3px"}} onChange={()=>{filtrareg(filtr)}}>
+              <select name="region" ref={filtr} style={{borderRadius: "8px",marginLeft:"3px",backgroundColor:"hsl(209, 33%, 22%)",color:"white",fontSize:"17px"}} onChange={()=>{filtrareg(filtr)}}>
               <option value="">none</option>
               <option value="Africa">Africa</option>
               <option value="America">America</option>

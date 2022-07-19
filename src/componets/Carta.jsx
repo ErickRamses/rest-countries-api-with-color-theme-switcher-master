@@ -25,7 +25,7 @@ export const Carta = ({cliked,name,imagen,pop,reg,cap}) => {
       if(nosw.code!=="Enter")return
       cliked(name)}}>
       
-      <b>{name}</b>
+      <b >{name}</b>
        
         
         <div style={{paddingBottom:"10px"}}>
